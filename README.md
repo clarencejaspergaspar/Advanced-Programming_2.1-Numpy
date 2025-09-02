@@ -45,10 +45,12 @@ This repository is created to showcase various programming activities, specifica
     - Create a new repository in GitHub.
 
     - Upload the .ipynb file(s) to the repository.
+  
+    - Aside from .ipynb file, .npy file was also uploaded as part of the Module 2.1(numpy)
 
 4. Organize Portfolio
 
-    - Each activity will have its own section in this README.
+    - Each activity will have its own repository and own section of README.
     - Tasks will be documented with short explanations and screenshots.
 
 
@@ -62,13 +64,13 @@ The original files for these activities are uploaded in this repository alongsid
 
 ---
 
-🔹 *Activity 1: INTRODUCTION TO PYTHON PROGRAMMING*
+🔹 *Experiment 2: NUMERICAL PYTHON (NUMPY)*
 
 **I. Intended Learning Outcomes:**
 <br><br> 
-    1. To identify the basic codes and functions in Python Programming.
+    1. To identify the codes and functions incorporated in the Numpy library.
 <br>   
-    2. To be able to apply the different codes and functions in creating a python program.
+    2. To be able to apply and use the different codes and functions in creating a Python program using a Numpy library.
 <br><br> 
 
 **II. Instructions:**
@@ -76,21 +78,64 @@ The original files for these activities are uploaded in this repository alongsid
 Write a Python script/code in the Jupyter Notebook to do the given problems.
 
 
-- **Task 1: Alphabet Soup Problem:**
+- **Task 1: Normalization Problem:**
   
-<img width="1672" height="370" alt="Screenshot 2025-08-27 210230" src="https://github.com/user-attachments/assets/cd91fe53-350b-4b33-b1e1-36341b4b197d" />
-  
-  The program defines a function called arrange that takes a string and arranges its letters alphabetically. This is done by using sorted() to order the characters and join() to combine them back into a single string. The user is then asked to input a word, which is passed to the function. Finally, the arranged letters are displayed, showing the word’s characters sorted from A to Z.
+<img width="1397" height="755" alt="Screenshot 2025-09-03 030854" src="https://github.com/user-attachments/assets/2f8aeac4-cd76-4e87-a9d8-f2ab4596d49d" />
 
 
-- **Task 2: Emoticon Problem:**
+This part demonstrates how to generate a random 5×5 NumPy array, calculate its mean and standard deviation, and then normalize the dataset using these statistical values. Normalization is an important preprocessing step in data science and machine learning because it scales data into a standard range, making it easier to compare values. The task also includes saving the normalized array into a .npy file for future use, showing how NumPy can efficiently handle both computation and file storage.
+
+### Code Explanation
+
+```
+import numpy as np
+```
+This section of the code imports the Numpy library with a nickname np to allow it to be called easier. This will be used for generating arrays and doing calculations.
+
+```
+X = np.random.random((5,5))
+```
+This section creates a 5x5 array of random values between 0 and 1 under the variable name "X".
+
+```
+print("Original X:\n", X)
+```
+This prints the generated array to the console. The `\n` ensures the array is shown on a new line.
+
+```
+X_mean = X.mean()
+```
+This calculates the mean of all elements in the array. The result is stored in the variable `X_mean`.
+
+```
+X_std = X.std()
+```
+This calculates the standard deviation of the array. The result is stored in the variable `X_std`.
+
+```
+X_normalized = (X - X_mean) / X_std
+```
+This normalizes the array by subtracting the mean and dividing by the standard deviation. The result is stored in `X_normalized`.
+
+```
+print("\nMean of X:", X_mean)
+print("Standard Deviation of X:", X_std)
+print("Normalized X:\n", X_normalized)
+```
+These lines print the mean, standard deviation, and the normalized array.
+
+```
+np.save("X_normalized.npy", X_normalized)
+```
+This saves the normalized array into a `.npy` file. It allows the data to be reused without recalculation.
+
+<br><br>
+
+
+- **Task 2: Divisible by 3 Problem:**
 
 <img width="1392" height="634" alt="Screenshot 2025-08-27 210334" src="https://github.com/user-attachments/assets/4d82a3c7-edd5-4d1f-b8ec-2d1cd4ba502a" />
 
   The program defines a function called convert that changes specific words in a sentence into their corresponding emoticons. A dictionary is used to store the word–emoticon pairs, such as “smile” → :) and “sad” → :((. The sentence is split into individual words, and the function checks each one to see if it matches a key in the dictionary. If it does, the word is replaced with the corresponding emoticon. After processing, the words are joined back into a complete sentence. The program demonstrates this with an example and then allows the user to enter their own sentence, which is converted into emoticons and displayed as output.
 
-- **Task 3: Unpacking List Problem:**
 
-<img width="1673" height="486" alt="Screenshot 2025-08-27 210354" src="https://github.com/user-attachments/assets/b00845de-23d5-4993-bd4a-2277d0589e4a" />
-
-  The program starts with a list of numbers and demonstrates how to access specific elements using their indexes. The first element is obtained with list[0], since indexing begins at zero. The middle portion is extracted with list[1:-1], which selects all elements from the second up to the second-to-last. The last element is accessed using list[-1], where negative indexing counts from the end of the list. Finally, the program prints the first, middle, and last parts separately, showing how list slicing and indexing can classify elements based on their placement.
