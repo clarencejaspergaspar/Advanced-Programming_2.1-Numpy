@@ -134,8 +134,9 @@ This saves the normalized array into a `.npy` file. It allows the data to be reu
 
 - **Task 2: Divisible by 3 Problem:**
 
-<img width="1392" height="634" alt="Screenshot 2025-08-27 210334" src="https://github.com/user-attachments/assets/4d82a3c7-edd5-4d1f-b8ec-2d1cd4ba502a" />
+<img width="1395" height="705" alt="Screenshot 2025-09-03 063433" src="https://github.com/user-attachments/assets/1223dff1-5109-41d0-88de-74972e4c1fe2" />
 
-  The program defines a function called convert that changes specific words in a sentence into their corresponding emoticons. A dictionary is used to store the word–emoticon pairs, such as “smile” → :) and “sad” → :((. The sentence is split into individual words, and the function checks each one to see if it matches a key in the dictionary. If it does, the word is replaced with the corresponding emoticon. After processing, the words are joined back into a complete sentence. The program demonstrates this with an example and then allows the user to enter their own sentence, which is converted into emoticons and displayed as output.
+
+This activity demonstrates how to generate a 10×10 NumPy array containing the squares of the first 100 positive integers. It also applies boolean indexing to extract all values divisible by 3, and saves the result into a .npy file for later use.
 
 
