@@ -164,5 +164,12 @@ This part selects the elements inside the matrix that are divisible by 3 selecti
 ```
 np.save("div_by_3.npy", div_by_3)
 ```
+By using the .save function, the array div_by_3 is stored in an external binary file named div_by_3.npy. This allows the data to be preserved and reloaded later without recomputing the results.
 
+```
+print("10x10 Matrix of Squares:\n", squares_matrix)
+print("\nNumbers divisible by 3:\n", div_by_3)
+``` 
+
+These last lines display the original 10×10 matrix of squared numbers. It also printed the extracted values that are divisible by 3.
 
