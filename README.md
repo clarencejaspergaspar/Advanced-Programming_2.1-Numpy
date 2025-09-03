@@ -139,4 +139,30 @@ This saves the normalized array into a `.npy` file. It allows the data to be reu
 
 This activity demonstrates how to generate a 10×10 NumPy array containing the squares of the first 100 positive integers. It also applies boolean indexing to extract all values divisible by 3, and saves the result into a .npy file for later use.
 
+### Code Explanation
+
+```
+import numpy as np
+```
+This section of the code imports the Numpy library with a nickname np to allow it to be called easier. This will be used for generating arrays and doing calculations.
+
+```
+squares = np.arange(1, 101) ** 2
+```
+This part creates an array under the variable name "squares". The data are the squared values ranging from 1 until 100 as indicated by **2.
+
+```
+squares_matrix = squares.reshape(10,10)
+```
+This section arranges the array by converting it into a 10x10 matrix using the .reshape(10, 10) function.
+
+```
+div_by_3 = squares_matrix[squares_matrix % 3 == 0]
+```
+This part selects the elements inside the matrix that are divisible by 3 selecting the elements whose remainder returns a value of zero when divided by 3.
+
+```
+np.save("div_by_3.npy", div_by_3)
+```
+
 
